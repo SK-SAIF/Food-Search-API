@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,31 @@
     <title>FoodLand</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h2>Search Here</h2>
-    <input id="foodSearchBar" type="text" name="" id="" placeholder="Enter food name">
-    <button onclick="searchFoodButton()">Search</button>
+    <main>
+        <section class="top-section">
+            <h1>Get your food!</h1>
+        </section>
+        <section class="middle-section">
+            <div id="foodList">
 
-    <div id="foodDiv">
+            </div>
+            <ul id="ingredientsUl">
 
-    </div>
+            </ul>
+        </section>
+        <section class="last-section">
+            <input id="foodSearchBar" type="text" name="" id="" placeholder="Enter food name">
+            <button onclick="searchFoodButton()">Search</button>
 
+            <div id="foodDiv">
 
-    <script src="script.js"></script>
-    
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </main>
 </body>
+
 </html>
