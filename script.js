@@ -1,35 +1,38 @@
 function foodCome(foodName) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${foodName}`)
         .then(res => res.json())
 
         .then(data => {
-            const x = data.meals;
-            if (x === null) {
-                document.getElementById("foodDiv").innerText="Sorry, no result found"
+            const foodArray = data.meals;
+            if (foodArray === null) {
+                document.getElementById("foodDiv").innerText = "Sorry, no result found";
             }
             else {
-                const total = console.log(x[0]);
+                foodArray.map(eachFood => {
+                    const foodName = eachFood.strMeal;
+                    const foodPic = eachFood.strMealThumb;
 
-                const mealName = x[0].strMeal;
-                const mealPic = x[0].strMealThumb;
+                    const parent = document.getElementById("foodDiv");
 
-                const parent = document.getElementById("foodDiv");
+                    const foodThumb = document.createElement('div');
+                    foodThumb.innerHTML = `
+                    <div class="foodEvery" onclick="foodClick()">
+                    <div><img src="${foodPic}"></div>
+                    <div><p>${foodName}</p></div>
+                    </div>
+                `
+                    parent.appendChild(foodThumb);
 
-                const foodThumb = document.createElement('div');
-                foodThumb.innerHTML = `
-                <div><img src="${mealPic}"></div>
-                <div><p>${mealName}</p></div>
-            `
-                parent.appendChild(foodThumb);
+                });
             }
-
-
         });
 }
-
 function searchFoodButton() {
     document.getElementById("foodDiv").innerHTML = null;
     const inputFoodName = document.getElementById("foodSearchBar").value;
     foodCome(inputFoodName);
-}
 
+}
+function foodClick(){
+    console.log("sbjsh");
+}

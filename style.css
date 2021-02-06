@@ -1,0 +1,9 @@
+.foodEvery{
+    border: 2px solid blue;
+    width: 200px;
+    height: 280px;
+}
+.foodEvery img{
+    width: 200px;
+    height: 200px;
+}
