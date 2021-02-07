@@ -17,7 +17,7 @@ function foodCome(foodName) {
                     foodThumb.innerHTML = `
                     <div class="foodEvery" id="foodSpecificName" onclick="foodDetails('${foodName}')">
                     <div><img src="${foodPic}"></div>
-                    <div><h2>${foodName}</h2></div>
+                    <div><h3>${foodName}</h3></div>
                     </div>
                 `
                     parent.appendChild(foodThumb);
@@ -48,7 +48,7 @@ function foodDetails(foodCoreName) {
             foodThumb.innerHTML = ` 
                 <div id="singleFoodDetails">  
                 <div><img src="${foodPic}"></div>
-                <div><h2>${foodName}</h2></div>
+                <div><h3>${foodName}</h3></div>
                 <h5>Ingredients</h5>
                 <div>
             `
