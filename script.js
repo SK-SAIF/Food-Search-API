@@ -17,7 +17,7 @@ function foodCome(foodName) {
                     foodThumb.innerHTML = `
                     <div class="foodEvery" id="foodSpecificName" onclick="foodDetails('${foodName}')">
                     <div><img src="${foodPic}"></div>
-                    <div><p>${foodName}</p></div>
+                    <div><h2>${foodName}</h2></div>
                     </div>
                 `
                     parent.appendChild(foodThumb);
@@ -43,14 +43,14 @@ function foodDetails(foodCoreName) {
             const foodPic = singleFoodObject.strMealThumb;
               
             const arrayOfIngredients = Object.entries(singleFoodObject);
-            console.log(arrayOfIngredients);
-
             const parent = document.getElementById("foodList");
             const foodThumb = document.createElement('section');
-            foodThumb.innerHTML = `   
+            foodThumb.innerHTML = ` 
+                <div id="singleFoodDetails">  
                 <div><img src="${foodPic}"></div>
-                <div><p>${foodName}</p></div>
+                <div><h2>${foodName}</h2></div>
                 <h5>Ingredients</h5>
+                <div>
             `
             parent.appendChild(foodThumb);
             const parentUl = document.getElementById("ingredientsUl");
@@ -58,7 +58,6 @@ function foodDetails(foodCoreName) {
                 const element = arrayOfIngredients[i];
                 const element2 = arrayOfIngredients[i + 20];
                 let item = element2[1] + " " + element[1];
-                console.log(item);
                 if (item != " ") {
                     const childLi = document.createElement("li");
                     childLi.innerText = item;

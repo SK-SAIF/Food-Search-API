@@ -1,9 +1,28 @@
 .foodEvery{
-    border: 2px solid blue;
+    border: 2px solid gainsboro;
     width: 200px;
     height: 280px;
+    background-color: rgb(158, 158, 86);
 }
 .foodEvery img{
     width: 200px;
     height: 200px;
+}
+.middle-section{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 400px;
+    margin: 60px 0px; 
+      
+}
+.middle-section img{
+    width: 400px;  
+}
+.inputSearch{
+    margin: 40px 0px;
+}
+#foodDiv{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 50px;
 }
