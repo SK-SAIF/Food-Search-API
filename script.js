@@ -3,7 +3,6 @@ function foodCome(foodName) {
         .then(res => res.json())
         .then(data => {
             const foodArray = data.meals;
-            console.log(foodArray);
             if (foodArray === null) {
                 document.getElementById("foodDiv").innerText = "Sorry, no result found";
             }
@@ -11,7 +10,6 @@ function foodCome(foodName) {
                 foodArray.map(eachFood => {
                     const foodName = eachFood.strMeal;
                     const foodPic = eachFood.strMealThumb;
-
                     const parent = document.getElementById("foodDiv");
                     const foodThumb = document.createElement('section');
                     foodThumb.innerHTML = `
@@ -38,10 +36,8 @@ function foodDetails(foodCoreName) {
         .then(data => {
             const singleFoodArray = data.meals;
             const singleFoodObject = singleFoodArray[0];
-
             const foodName = singleFoodObject.strMeal;
-            const foodPic = singleFoodObject.strMealThumb;
-              
+            const foodPic = singleFoodObject.strMealThumb;              
             const arrayOfIngredients = Object.entries(singleFoodObject);
             const parent = document.getElementById("foodList");
             const foodThumb = document.createElement('section');
